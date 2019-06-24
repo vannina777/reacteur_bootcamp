@@ -3,6 +3,7 @@ const powerFunc = (num, power) => {
   let counter = 2;
   let negPower = undefined;
 
+  // check if power is negative
   if (power < 0) {
     negPower = true;
     power = power * -1;
@@ -10,7 +11,7 @@ const powerFunc = (num, power) => {
     negPower = false;
   }
 
-  // check for negative power related exceptions
+  // check for power related exceptions
   if (power === 0) {
     total = 1;
     return total;
@@ -18,7 +19,7 @@ const powerFunc = (num, power) => {
     total = num;
   }
 
-  // main iteration
+  // main logic
   for (counter; counter <= power; counter++) {
     total = num * num;
   }
