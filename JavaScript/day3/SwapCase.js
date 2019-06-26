@@ -4,18 +4,6 @@ let element = elements[0];
 let result = "";
 let display = true;
 
-try {
-  if (elements.length > 1) {
-    throw "There is a problem with your argument";
-  }
-  if (arg.length < 3) {
-    throw "You didn't pass any argument";
-  }
-} catch (err) {
-  console.log(err);
-  display = false;
-}
-
 const transform = element => {
   for (let letter of element) {
     if (letter === letter.toLowerCase()) {
@@ -30,6 +18,18 @@ const transform = element => {
   }
   return result;
 };
+
+try {
+  if (elements.length > 1) {
+    throw "There is a problem with your argument";
+  }
+  transform(element);
+  //throw "You didn't pass any argument";
+} catch (err) {
+  console.log(err.message);
+  display = false;
+}
+
 if (display === true) {
   console.log(transform(element));
 }
