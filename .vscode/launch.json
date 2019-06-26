@@ -8,7 +8,7 @@
       "type": "node",
       "request": "launch",
       "name": "Launch Program",
-      "program": "${workspaceFolder}/JavaScript/numbers-to-letters.js"
+      "program": "${workspaceFolder}/JavaScript/numbers-to-letters-2.js"
     }
   ]
 }
