@@ -23,7 +23,7 @@ const construct_pendu = tryIndex => {
 	console.log(pendu.join("\n"));
 };
 
-/* DEBUT  */
+/* FUNNCTIONS  */
 
 // random + >4 letter + majuscule and accent stripping
 const get_word = () => {
@@ -42,6 +42,7 @@ const get_word = () => {
 	console.log(hiddenWord);
 };
 
+// checks word and replaces * in hiddenWord displayed
 const check_letter = input => {
 	let inputFormatted = input.trim().toUpperCase();
 	tries += 1;
@@ -69,7 +70,7 @@ const check_letter = input => {
 		new_try();
 	}
 };
-
+ //prompt user for input
 const new_try = () => {
 	console.log("\n");
 	console.log(`Il vous reste ${10 - tries} coups à jouer`);
@@ -77,10 +78,7 @@ const new_try = () => {
 	rl.question("Proposez une lettre : ", check_letter);
 };
 
-// format the mystery word
-//const formatMystery = (word, letter) => {};
-// main loop
+/* INITIALIZE */
 
-// check player input
 get_word();
 new_try();
