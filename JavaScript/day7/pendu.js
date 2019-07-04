@@ -9,7 +9,7 @@ let hiddenWord = "";
 
 // le pendu
 const steps = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
-const setSign = ["|", "|", "\\", "_", "_", "_", "o", "|", "/", "\\"];
+const setSign = [" ", "|", "|", "\\", "_", "_", "_", "o", "|", "/", "\\"]; // change constructor
 
 const construct_pendu = tryIndex => {
 	steps[tryIndex] = setSign[tryIndex];
@@ -38,8 +38,8 @@ const get_word = () => {
 	selectedWord = selectedWord.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 	selectedWord = selectedWord.toUpperCase();
 	hiddenWord = "*".repeat(selectedWord.length);
-	console.log(selectedWord);
-	console.log(hiddenWord);
+	/* console.log(selectedWord);
+	console.log(hiddenWord); */
 };
 
 const check_letter = input => {
@@ -75,10 +75,6 @@ const new_try = () => {
 	console.log(`Quel est le mot secret ? ${hiddenWord}`);
 	rl.question("Proposez une lettre : ", check_letter);
 };
-
-// format the mystery word
-//const formatMystery = (word, letter) => {};
-// main loop
 
 // check player input
 get_word();

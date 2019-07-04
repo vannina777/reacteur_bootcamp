@@ -8,7 +8,7 @@
 			"type": "node",
 			"request": "launch",
 			"name": "Launch Program",
-			"program": "${workspaceFolder}/day7/pendu.js"
+			"program": "/home/theau/Documents/reacteur_bootcamp/JavaScript/test2.js"
 		}
 	]
 }
