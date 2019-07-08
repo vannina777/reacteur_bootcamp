@@ -13,12 +13,12 @@ url = `http://localhost:3000/${action}?date=${date}`;
 if (action === "book") {
 	url += `&seats=${seats}&category=${category}`;
 }
-
+console.log(url);
 axios
 	.get(url)
 	.then(response => {
-		console.log(response.data);
+		console.log(response);
 	})
 	.catch(err => {
-		console.log(err.status);
+		console.log(`${err.response.status} : ${err.response.data.error}`);
 	});

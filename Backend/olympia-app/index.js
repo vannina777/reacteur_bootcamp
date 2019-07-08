@@ -4,10 +4,10 @@ const app = express();
 const dateFns = require("date-fns");
 
 let dates = {
-	"2019-02-01": {
+	"2019-09-01": {
 		date: "2019-02-01",
 		orchestre: 1164,
-		mezzanine: 824
+		mezzanine: 0 // 824
 	}
 };
 
@@ -62,6 +62,25 @@ app.get("/book", (req, res) => {
 	/* 
     date format = YYYY-MM-DD
 	seats format = 1 <= x <= 4 */
+
+	console.log(req.query.seats, req.query.category, req.query.date);
+
+	let isEmpty =
+		req.query.seats === "undefined" ||
+		req.query.category === "undefined" ||
+		req.query.date === "undefined";
+
+	console.log(isEmpty);
+	if (isEmpty === true) {
+		console.log("I am true");
+		//res.status(400);
+		return res.status(400).json({ error: "Missing Input" });
+		//return res.send(res.statusCode);
+
+		//throw new Error("Input Missing");
+		// .json("Missing input");
+	}
+
 	let before = isDateBefore(req.query.date);
 
 	if (before === true) {
@@ -86,11 +105,6 @@ app.get("/book", (req, res) => {
 			} else {
 				res.json({ error: { message: "Not enough available seats" } });
 			}
-		} else {
-			console.log("here3");
-			res
-				.status(400)
-				.json({ error: { message: "Invalid request", status: this.status } });
 		}
 	}
 });
@@ -98,3 +112,32 @@ app.get("/book", (req, res) => {
 app.listen(3000, () => {
 	console.log("Server has started");
 });
+
+/* Hello,
+
+I am building a cli client for an api. On my Express server, I set up this logic to capture an error and send back a message to the user.
+
+    app.get("/book", (req, res) => {
+
+	  console.log(req.query.seats, req.query.category, req.query.date);
+
+	  let isEmpty =
+		req.query.seats === "undefined" ||
+		req.query.category === "undefined" ||
+		req.query.date === "undefined";
+
+	  console.log(isEmpty);
+	  if (isEmpty === true) {
+		console.log("I am true");
+		res.status(400).send("Input Missing");
+		
+	}
+
+     // code continues
+    }
+
+the `res.status(400).send("Input Missing")` doesn't seem to work as it sends back undefined to the user.
+
+Is there a problem with the syntax ? Is the behavior normal ? 
+
+Thanks ! */
