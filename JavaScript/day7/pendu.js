@@ -14,10 +14,10 @@ const setSign = [" ", "|", "|", "\\", "_", "_", "_", "o", "|", "/", "\\"]; // ch
 const construct_pendu = tryIndex => {
 	steps[tryIndex] = setSign[tryIndex];
 	let pendu = [
-		[`   ${steps[5]}${steps[4]}${steps[3]} `],
-		[`   ${steps[6]}  ${steps[2]}`],
-		[`   ${steps[7]}  ${steps[1]}`],
-		[`  ${steps[8]} ${steps[9]} |`],
+		[`   ${steps[6]}${steps[5]}${steps[4]} `],
+		[`   ${steps[7]}  ${steps[3]}`],
+		[`   ${steps[8]}  ${steps[2]}`],
+		[`  ${steps[9]} ${steps[10]} ${steps[1]}`],
 		[`-------`]
 	];
 	console.log(pendu.join("\n"));
@@ -61,6 +61,7 @@ const check_letter = input => {
 
 		rl.close();
 	} else if (tries === 10) {
+		construct_pendu(tries);
 		console.log("Looser ...");
 		rl.close();
 	} else {
