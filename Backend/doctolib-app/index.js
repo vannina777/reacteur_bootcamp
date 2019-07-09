@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const app = express();
 const dateFns = require("date-fns");
+const app = express();
 app.use(bodyParser.json());
 
 /* GLOBAL VARIABLES */
@@ -103,6 +103,9 @@ app.get("/visits", (req, res) => {
 
 // books depending on date, slot and name + generates reservation number
 app.post("/visits", (req, res) => {
+	/* 
+	req.body = gets all data passed from the body of the POST requet
+	*/
 	if (!req.query.date || !req.query.slot || !req.query.name) {
 		res.status(400).json({ error: { message: "Missing arguments" } });
 	} else {
@@ -130,7 +133,7 @@ app.post("/cancel", (req, res) => {
 	}
 });
 
-/* OTHER PARAMS */
+/* INIT & ERROR HANDLING */
 
 app.listen(3000, () => {
 	console.log("Server Started");

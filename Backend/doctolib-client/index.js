@@ -21,7 +21,7 @@ if (action === "check") {
 	url += `&slot=${selectedSlot}&name=${clientName}`;
 	console.log("POST Method on " + url);
 	axios
-		.post(url)
+		.post(url) // object with body args
 		.then(response => {
 			console.log(response.data);
 		})
