@@ -40,7 +40,7 @@ const Product = mongoose.model("Product", {
 	}
 });
 
-/* FUNCTIONS */
+/* ROUTES */
 
 // --- department routes --- //
 
@@ -70,7 +70,7 @@ app.post("/department/create", async (req, res) => {
 	}
 });
 
-// read Departments - BASIC OK
+// read Departments - FULL OK
 app.get("/department", async (req, res) => {
 	try {
 		const result = await Department.find();
@@ -101,7 +101,7 @@ app.post("/department/update", async (req, res) => {
 	}
 });
 
-// delete Department and attached products and categories
+// delete Department and attached products and categories - FULL OK
 app.post("/department/delete", async (req, res) => {
 	const depId = req.query.id;
 
@@ -222,12 +222,12 @@ app.post("/category/update", async (req, res) => {
 	} catch (error) {}
 });
 
-// delete category and attached products
+// delete category and attached products - FULL OK
 app.post("/category/delete", async (req, res) => {
 	try {
 		const catId = req.query.id;
 		const category = await Category.findOne({ _id: catId }).remove();
-		const products = await Product.find({ category: catId });
+		const products = await Product.find({ category: catId }).remove();
 		res.json("Nice delete");
 	} catch (error) {
 		console.log(error.message);
@@ -294,13 +294,18 @@ app.get("/product", async (req, res) => {
 		filters["title"] = { $regex: regex, $options: "i" };
 		console.log("I am finished here");
 	}
-	if (priceMin) {
+	if (priceMin && priceMax) {
 		// ok
-		filters.price = { $gte: priceMin };
-	}
-	if (priceMax) {
-		// ok
-		filters.price = { $lte: priceMax };
+		filters.price = { $lte: priceMax, $gte: priceMin };
+	} else {
+		if (priceMin) {
+			// ok
+			filters.price = { $gte: priceMin };
+		}
+		if (priceMax) {
+			// ok
+			filters.price = { $lte: priceMax };
+		}
 	}
 
 	/*  */
@@ -374,9 +379,11 @@ app.post("/product/delete", async (req, res) => {
 	}
 });
 
-/* ROUTES */
-
 /* REST */
+
+app.all("*", (req, res) => {
+	res.send("all routes");
+});
 
 app.listen(3000, () => {
 	console.log("Server Started");
