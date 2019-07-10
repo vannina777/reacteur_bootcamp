@@ -52,7 +52,7 @@ app.get("/", async (req, res) => {
 	// print full inventory
 
 	try {
-		const drugs = await Drug.find();
+		const drugs = await Drug.find({}, "name quantity -_id");
 		res.json(drugs);
 	} catch (error) {
 		res.json(error.message);
