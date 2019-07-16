@@ -1,3 +1,32 @@
+/* GLOBAL */
+
+:root {
+	--pink: #eea8b1;
+	--purple: #c69dc7;
+	--violet: #a89dc7;
+	--blue: #9cb3df;
+	--lightBlue: #8ecaee;
+}
+
+.bg-pink {
+	background-color: var(--pink);
+}
+.bg-purple {
+	background-color: var(--purple);
+}
+.bg-violet {
+	background-color: var(--violet);
+}
+.bg-blue {
+	background-color: var(--blue);
+}
+.bg-lightBlue {
+	background-color: var(--lightBlue);
+}
+.bg-purple {
+	background-color: var(--purple);
+}
+
 body {
 	font-family: "Source Sans Pro", sans-serif;
 	background-color: #615494;
@@ -39,7 +68,7 @@ h3::after {
 h3,
 h4 {
 	text-align: center;
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 	line-height: 38px;
 }
 
@@ -54,6 +83,18 @@ p {
 	text-align: justify;
 	line-height: 30px;
 }
+
+/* NAV */
+
+nav {
+	display: flex;
+	background-color: white;
+	height: 50px;
+	justify-content: flex-end;
+	align-items: center;
+}
+
+/* HEADER */
 
 header {
 	color: white;
@@ -70,6 +111,9 @@ header {
 	border-radius: 50%;
 	color: #615494;
 	margin-bottom: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .container {
@@ -83,13 +127,12 @@ main {
 	overflow: hidden;
 }
 
+/* MENU */
+
 menu {
-	background-color: #F7F7F7;
+	background-color: #f7f7f7;
 	font-weight: 400;
 	padding: 20px;
-/* 	border-radius: 10px 10px 0 0 ;
- */
-	
 }
 
 menu > ul {
@@ -106,12 +149,12 @@ menu a {
 	font-size: 18px;
 	line-height: 40px;
 	text-decoration: none;
-	color: #6B6B6B;
-	
+	color: #6b6b6b;
+	padding: 10px 25px;
 } /* menu > ul > li > a */
 
-menu a:hover{
-	background-color: red;
+menu a:hover {
+	background-color: beige;
 }
 
 section {
@@ -122,7 +165,7 @@ section {
 /* WHO AM I */
 
 #who-am-i {
-	display: flex;Ceci est un site réalisé pour la société lambda. Il a été créé grâce au langage HTML et CSS.
+	display: flex;
 }
 
 #who-am-i img {
@@ -137,7 +180,7 @@ section {
 	text-align: left;
 }
 
-#who-am-i h3:after {
+#who-am-i h3::after {
 	margin: 25px 0;
 }
 
@@ -148,15 +191,14 @@ section {
 
 .articles {
 	display: flex;
-	flex-wrap: wrap
-	
+	flex-wrap: wrap;
 }
 
 article {
 	width: calc(50% - 80px);
 	padding: 0 40px;
 	text-align: center;
-	margin-top: 60px
+	margin-top: 60px;
 }
 
 article img {
@@ -165,7 +207,7 @@ article img {
 
 article p {
 	text-align: center;
-	margin-bottom: 30px
+	margin-bottom: 30px;
 }
 
 article a {
@@ -180,20 +222,158 @@ article a {
 	text-align: center;
 }
 
-article a:hover{
-	background-color: #615494
+article a:hover {
+	background-color: #dddddd;
+}
+
+/* SKILLS */
+
+.logos {
+	display: flex;
+	margin-bottom: 30px;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.logos i {
+	text-align: center;
+}
+
+.logos div {
+	flex: 1;
+	itext-align: center;
+}
+
+.logos p {
+	text-align: center;
+	color: white;
+	font-size: 20px;
+	line-height: 20px;
+	font-weight: 500;
+}
+
+.language {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+section .fab {
+	color: white;
+}
+
+#skills > p {
+	column-count: 2;
+}
+
+/* CONTACT */
+
+form {
+	display: flex;
+	flex-direction: column;
+	margin: auto;
+	width: 400;
+}
+
+input {
+	border: 1px solid #dddddd;
+	border-radius: 13px;
+	margin-bottom: 30px;
+	height: 50px;
+	font-size: 18px;
+	padding: 0 15px;
+}
+
+textarea {
+	border: 1px solid #dddddd;
+	border-radius: 13px;
+	margin-bottom: 30px;
+	padding: 15px 15px;
+	font-size: 18px;
+}
+
+button {
+	font-size: 18px;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	height: 50px;
+	color: #636363;
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+	header {
+		height: 500px;
+		align-items: center;
+	}
+
+	menu {
+		display: none;
+	}
+
+	section {
+		padding: 50px;
+	}
+
+	#who-am-i {
+		flex-direction: column-reverse;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.paragraph {
+		text-align: center;
+	}
+
+	#who-am-i h3 {
+		text-align: center;
+	}
+	#who-am-i h3::after {
+		margin: 25px auto;
+	}
+
+	#who-am-i img {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+
+	.articles {
+		flex-flow: column;
+	}
+
+	article {
+		width: 100%;
+		padding: 0;
+	}
+
+	.logos {
+		flex-flow: column wrap;
+	}
+
+	#skills > p {
+		column-count: 1;
+	}
+}
+
+@media (min-width: 768px) {
+	nav {
+		display: none;
+	}
+}
+
+@media (max-width: 1024px) {
+	.container {
+		width: 100%;
+	}
 }
 
 /* 
 
-:root {
-	--red: rgb(195, 53, 40);
-	--orange: rgb(250, 132, 60);
-	--yellow: rgb(255, 235, 104);
-	--green: rgb(0, 132, 71);
-	--blue: rgb(0, 179, 230);
-	--purple: rgb(84, 47, 140);
-}
+
 
 body {
 	background-color: #615494;
