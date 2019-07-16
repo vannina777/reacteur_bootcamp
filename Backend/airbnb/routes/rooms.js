@@ -23,6 +23,7 @@ router.post("/api/room/publish", async (req, res) => {
 	const description = req.body.description;
 	const photos = req.body.photos;
 	const price = req.body.price;
+	const city = req.body.city;
 	const loc = req.body.loc;
 
 	const newRoom = new Room({
@@ -30,6 +31,7 @@ router.post("/api/room/publish", async (req, res) => {
 		description: description,
 		photos: photos,
 		price: price,
+		city: city,
 		loc: loc,
 		ratingValue: null,
 		review: 0
@@ -55,5 +57,16 @@ router.get("/api/room/:id", async (req, res) => {
 });
 
 // search room on geo-base
+router.get("/api/rooms", async (req, res) => {
+	const city = req.query.city;
+
+	try {
+		const search = await Room.find({ city: city });
+		const count = search.length;
+		res.json({ rooms: search, count: count });
+	} catch (error) {
+		res.status(400).json({ error: { message: "Bad Request" } });
+	}
+});
 
 module.exports = router;

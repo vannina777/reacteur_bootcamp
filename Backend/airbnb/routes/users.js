@@ -61,13 +61,17 @@ router.post("/api/user/log-in", async (req, res) => {
 
 	// need to not display hash and token
 	if (passwordCorrect) {
-		user.token = uid2(16);
-		await user.save();
-		let userObj = user.toObject();
+		try {
+			user.token = uid2(16);
+			await user.save();
+			let userObj = user.toObject();
 
-		delete userObj.salt;
-		delete userObj.hash;
-		res.json(userObj);
+			delete userObj.salt;
+			delete userObj.hash;
+			res.json(userObj);
+		} catch (error) {
+			res.status(400).json({ error: { message: "Bad Request" } });
+		}
 	} else {
 		res
 			.status(400)
