@@ -8,11 +8,18 @@
 		/>
 
 		<script src="https://kit.fontawesome.com/bdecdb1ef4.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<script src="./assets/js/script.js"></script>
 	</head>
 	<body>
+		<div id="arrow" class="up-button not-displayed">
+			<i class="fas fa-arrow-up fa-3x"></i>
+		</div>
+
 		<div class="container">
 			<nav>
-				<i class="fas fa-bars"></i>
+				<i id="burger" class="fas fa-bars fa-2x"></i>
 			</nav>
 			<header>
 				<div class="logo">
@@ -23,10 +30,10 @@
 			</header>
 
 			<main>
-				<menu>
+				<menu class="not-displayed">
 					<ul>
-						<li><a href="#who-am-i">Qui suis-je</a></li>
-						<li><a href="#projects">Projet</a></li>
+						<li><a href="#who-am-i">Qui suis-je ?</a></li>
+						<li><a href="#projects">Projets</a></li>
 						<li><a href="#skills">Competences</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
@@ -104,31 +111,23 @@
 					<h3>My skills</h3>
 					<h4>to pay the bills</h4>
 					<div class="logos">
-						<div class="bg-pink language" onmouseover="switchColors(this)"
-						onmouseout="switchColorsBack(this)"">
+						<div class="bg-pink language">
 							<i class="fab fa-html5 fa-5x"></i>
 							<p>HTML</p>
 						</div>
-						<div
-							class="bg-purple language"
-							onmouseover="switchColors(this)"
-							onmouseout="switchColorsBack(this)"
-						>
+						<div class="bg-purple language">
 							<i class="fab fa-css3-alt fa-5x"></i>
 							<p>CSS</p>
 						</div>
-						<div class="bg-violet language" onmouseover="switchColors(this)"
-						onmouseout="switchColorsBack(this)">
+						<div class="bg-violet language">
 							<i class="fab fa-react fa-5x "></i>
 							<p>REACT</p>
 						</div>
-						<div class="bg-blue language" onmouseover="switchColors(this)"
-						onmouseout="switchColorsBack(this)">
+						<div class="bg-blue language">
 							<i class="fab fa-js fa-5x "></i>
 							<p>JAVASCRIPT</p>
 						</div>
-						<div class="bg-lightBlue language" onmouseover="switchColors(this)"
-						onmouseout="switchColorsBack(this)">
+						<div class="bg-lightBlue language">
 							<i class="fab fa-node-js fa-5x "></i>
 							<p>NODE.JS</p>
 						</div>
@@ -152,38 +151,20 @@
 					<h4>Let's keep in touch !</h4>
 
 					<form action="">
-						<input type="text" placeholder="Votre nom" />
-						<input type="email" placeholder="Votre mail" />
-						<textarea placeholder="Votre requête" cols="30" rows="5"></textarea>
-						<button>Envoyer le mesage</button>
+						<input type="text" placeholder="Votre nom" name="name" />
+						<input type="email" placeholder="Votre mail" name="mail" />
+						<textarea
+							placeholder="Votre requête"
+							cols="30"
+							rows="5"
+							name="text"
+						></textarea>
+						<button type="submit">Envoyer le mesage</button>
 					</form>
 				</section>
 			</main>
 		</div>
 
-		<script>
-			function switchColors(x) {
-				console.log(x.childNodes);
-				let el = getComputedStyle(x);
-				const bgColor = el.backgroundColor;
-				x.style.backgroundColor = "white";
-				x.childNodes[3].style.color = bgColor;
-				x.childNodes[1].style.color = bgColor;
-
-				// get background color of the div
-				// save it
-				// pass white as background
-				// pass color or the div to the text
-			}
-
-			function switchColorsBack(x) {
-				let text = x.childNodes[3];
-				let textStyle = getComputedStyle(text);
-				const previousBgColor = textStyle.color;
-				text.style.color = "white";
-				x.childNodes[1].style.color = "white";
-				x.style.backgroundColor = previousBgColor;
-			}
-		</script>
+		<script></script>
 	</body>
 </html>
