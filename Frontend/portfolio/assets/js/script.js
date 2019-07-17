@@ -110,16 +110,17 @@ $.addEventListener("DOMContentLoaded", () => {
 
 	let state = 2;
 	const burger = $.querySelector("nav");
+	console.log(burger.childNodes[1]);
 	burger.addEventListener("click", e => {
 		const menu = $.querySelector("menu");
 		if (state % 2 === 0) {
 			menu.classList.remove("not-displayed");
-			burger.classList.remove("fa-bars");
-			burger.classList.add("fa-times");
+			burger.childNodes[1].classList.remove("fa-bars");
+			burger.childNodes[1].classList.add("fa-times");
 		} else {
 			menu.classList.add("not-displayed");
-			burger.classList.remove("fa-times");
-			burger.classList.add("fa-bars");
+			burger.childNodes[1].classList.remove("fa-times");
+			burger.childNodes[1].classList.add("fa-bars");
 		}
 
 		state += 1;
