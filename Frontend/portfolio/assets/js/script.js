@@ -109,7 +109,7 @@ $.addEventListener("DOMContentLoaded", () => {
 	// width for hidding menu
 
 	let state = 2;
-	const burger = $.querySelector("#burger");
+	const burger = $.querySelector("nav");
 	burger.addEventListener("click", e => {
 		const menu = $.querySelector("menu");
 		if (state % 2 === 0) {
