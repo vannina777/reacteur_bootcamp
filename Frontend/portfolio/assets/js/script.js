@@ -135,9 +135,10 @@ $.addEventListener("DOMContentLoaded", () => {
 		const menu = $.querySelector("menu");
 		let a = link.childNodes[0];
 		a.addEventListener("click", e => {
+			// e.preventDefault();
 			menu.classList.add("not-displayed");
-			burger.classList.remove("fa-times");
-			burger.classList.add("fa-bars");
+			burger.childNodes[1].classList.remove("fa-times");
+			burger.childNodes[1].classList.add("fa-bars");
 			state += 1;
 		});
 	});
