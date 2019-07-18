@@ -113,33 +113,25 @@ $.addEventListener("DOMContentLoaded", () => {
 	console.log(burger.childNodes[1]);
 	burger.addEventListener("click", e => {
 		const menu = $.querySelector("menu");
-		if (state % 2 === 0) {
-			menu.classList.remove("not-displayed");
-			burger.childNodes[1].classList.remove("fa-bars");
-			burger.childNodes[1].classList.add("fa-times");
-		} else {
-			menu.classList.add("not-displayed");
-			burger.childNodes[1].classList.remove("fa-times");
-			burger.childNodes[1].classList.add("fa-bars");
-		}
-
-		state += 1;
-
-		/* state += 1;
-		if (state % 2 === 0) {
-		} */
+		menu.classList.toggle("not-displayed");
+		burger.childNodes[1].classList.toggle("fa-times");
 	});
 
 	const links = $.querySelectorAll("li");
 	links.forEach(link => {
 		const menu = $.querySelector("menu");
 		let a = link.childNodes[0];
+		
 		a.addEventListener("click", e => {
-			// e.preventDefault();
-			menu.classList.add("not-displayed");
-			burger.childNodes[1].classList.remove("fa-times");
-			burger.childNodes[1].classList.add("fa-bars");
-			state += 1;
+			e.preventDefault();
+			menu.classList.toggle("not-displayed");
+			burger.childNodes[1].classList.toggle("fa-times");
+			const target = a.attributes[0].value
+			$.querySelector(target).scrollIntoView({
+				block: "start",
+				behavior: "smooth"
+			});
+			
 		});
 	});
 
