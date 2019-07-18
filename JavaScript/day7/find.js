@@ -14,11 +14,12 @@ const find = (objCible, conditions) => {
 	console.log(conditionKeys);
 	let indexOfTruthy = 0;
 
+	let isSame =
+		objCible[i][conditionKeys[0]] === conditionElements[0] &&
+		objCible[i][conditionKeys[1]] === conditionElements[1];
+
 	for (let i = 0; i < objCible.length; i++) {
-		if (
-			objCible[i][conditionKeys[0]] === conditionElements[0] &&
-			objCible[i][conditionKeys[1]] === conditionElements[1]
-		) {
+		if (isSame) {
 			indexOfTruthy = i;
 		}
 	}

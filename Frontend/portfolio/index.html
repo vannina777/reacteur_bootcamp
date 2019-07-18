@@ -1,0 +1,170 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="./assets/css/reset.css" />
+		<link rel="stylesheet" href="./assets/css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script src="https://kit.fontawesome.com/bdecdb1ef4.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+		<script src="./assets/js/script.js"></script>
+	</head>
+	<body>
+		<div id="arrow" class="up-button not-displayed">
+			<i class="fas fa-arrow-up fa-3x"></i>
+		</div>
+
+		<div class="container">
+			<nav>
+				<i id="burger" class="fas fa-bars fa-2x"></i>
+			</nav>
+			<header>
+				<div class="logo">
+					<i class="fas fa-code fa-3x"></i>
+				</div>
+				<h1>Theau's Portfolio</h1>
+				<h2>hire me pls</h2>
+			</header>
+
+			<main>
+				<menu class="not-displayed">
+					<ul>
+						<li><a href="#who-am-i">Qui suis-je ?</a></li>
+						<li><a href="#projects">Projets</a></li>
+						<li><a href="#skills">Competences</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</menu>
+
+				<section id="who-am-i">
+					<div class="paragraph">
+						<h3>Qui suis-je ?</h3>
+						<p>
+							Je m'appelle John Doe. Je suis développeur Web & Mobile depuis 2
+							ans déjà. J'ai été formé au Reacteur (Paris) où j'ai pu apprendre
+							à réaliser des sites Internet et applications Mobile. Mon
+							expérience dans le développement m'a permis de monter rapidement
+							en compétences, sur plusieurs technologies prisées des startups ou
+							grands groupes. Vous trouverez sur ce blog, mes derniers projets.
+						</p>
+					</div>
+					<img
+						src="https://tinyfac.es/data/avatars/26CFEFB3-21C8-49FC-8C19-8E6A62B6D2E0-200w.jpeg"
+						alt="portrait"
+					/>
+				</section>
+				<section id="projects">
+					<h3>Projets</h3>
+					<h4>Mes derniers projets</h4>
+					<div class="articles">
+						<article>
+							<img src="./assets/img/allocine.png" alt="allocine" />
+							<h5>Allocine</h5>
+							<p>
+								Ceci est un site réalisé pour la société lambda. Il a été créé
+								grâce au langage HTML et CSS.
+							</p>
+							<a href="https://www.allocine.fr/" target="_blank">
+								Voir le site</a
+							>
+						</article>
+						<article>
+							<img src="./assets/img/deliveroo.png" alt="allocine" />
+							<h5>Deliveroo</h5>
+							<p>
+								Ceci est un site réalisé pour la société lambda. Il a été créé
+								grâce au langage HTML et CSS.
+							</p>
+							<a href="https://www.allocine.fr/" target="_blank">
+								Voir le site</a
+							>
+						</article>
+						<article>
+							<img src="./assets/img/airbnb.png" alt="allocine" />
+							<h5>AirBnB</h5>
+							<p>
+								Ceci est un site réalisé pour la société lambda. Il a été créé
+								grâce au langage HTML et CSS.
+							</p>
+							<a href="https://www.allocine.fr/" target="_blank">
+								Voir le site</a
+							>
+						</article>
+						<article>
+							<img src="./assets/img/leboncoin.png" alt="allocine" />
+							<h5>Leboncoin</h5>
+							<p>
+								Ceci est un site réalisé pour la société lambda. Il a été créé
+								grâce au langage HTML et CSS.
+							</p>
+							<a href="https://www.allocine.fr/" target="_blank">
+								Voir le site</a
+							>
+						</article>
+					</div>
+				</section>
+
+				<section id="skills">
+					<h3>My skills</h3>
+					<h4>to pay the bills</h4>
+					<div class="logos">
+						<div class="bg-pink language">
+							<i class="fab fa-html5 fa-5x"></i>
+							<p>HTML</p>
+						</div>
+						<div class="bg-purple language">
+							<i class="fab fa-css3-alt fa-5x"></i>
+							<p>CSS</p>
+						</div>
+						<div class="bg-violet language">
+							<i class="fab fa-react fa-5x "></i>
+							<p>REACT</p>
+						</div>
+						<div class="bg-blue language">
+							<i class="fab fa-js fa-5x "></i>
+							<p>JAVASCRIPT</p>
+						</div>
+						<div class="bg-lightBlue language">
+							<i class="fab fa-node-js fa-5x "></i>
+							<p>NODE.JS</p>
+						</div>
+					</div>
+					<p>
+						Nam elementum nisl et mi a commodo porttitor. Morbi sit amet nisl eu
+						arcu faucibus hendrerit vel a risus. Nam a orci mi, elementum ac
+						arcu sit amet, fermentum pellentesque et purus. Integer maximus
+						varius lorem, sed convallis diam accumsan sed. Etiam porttitor
+						placerat sapien, sed eleifend a enim pulvinar faucibus semper quis
+						ut arcu. Ut non nisl a mollis est efficitur vestibulum. Integer eget
+						purus nec nulla mattis et accumsan ut magna libero. Morbi auctor
+						iaculis porttitor. Sed ut magna ac risus et hendrerit scelerisque.
+						Praesent eleifend lacus in lectus aliquam porta. Cras eu ornare dui
+						curabitur lacinia.
+					</p>
+				</section>
+
+				<section id="contact">
+					<h3>Contact</h3>
+					<h4>Let's keep in touch !</h4>
+
+					<form action="">
+						<input type="text" placeholder="Votre nom" name="name" />
+						<input type="email" placeholder="Votre mail" name="mail" />
+						<textarea
+							placeholder="Votre requête"
+							cols="30"
+							rows="5"
+							name="text"
+						></textarea>
+						<button type="submit">Envoyer le mesage</button>
+					</form>
+				</section>
+			</main>
+		</div>
+
+		<script></script>
+	</body>
+</html>
