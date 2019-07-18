@@ -8,8 +8,8 @@ let selectedWord = "";
 let hiddenWord = "";
 
 // le pendu
-const steps = [""," ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
-const setSign = [" ","|", "|", "\\", "_", "_", "_", "o", "|", "/", "\\"];
+const steps = [" ", " ", " ", " ", " ", " ", " ", " ", " ", " "];
+const setSign = [" ", "|", "|", "\\", "_", "_", "_", "o", "|", "/", "\\"]; // change constructor
 
 const construct_pendu = tryIndex => {
 	steps[tryIndex] = setSign[tryIndex];
@@ -38,8 +38,8 @@ const get_word = () => {
 	selectedWord = selectedWord.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 	selectedWord = selectedWord.toUpperCase();
 	hiddenWord = "*".repeat(selectedWord.length);
-	console.log(selectedWord);
-	console.log(hiddenWord);
+	/* console.log(selectedWord);
+	console.log(hiddenWord); */
 };
 
 // checks word and replaces * in hiddenWord displayed
@@ -62,7 +62,7 @@ const check_letter = input => {
 
 		rl.close();
 	} else if (tries === 10) {
-		construct_pendu(tries)
+		construct_pendu(tries);
 		console.log("Looser ...");
 		rl.close();
 	} else {
@@ -78,7 +78,11 @@ const new_try = () => {
 	rl.question("Proposez une lettre : ", check_letter);
 };
 
+<<<<<<< HEAD
 /* INITIALIZE */
 
+=======
+// check player input
+>>>>>>> dcb4fbbacb0effdbbbf30e2370ceb096ccdb0c03
 get_word();
 new_try();
