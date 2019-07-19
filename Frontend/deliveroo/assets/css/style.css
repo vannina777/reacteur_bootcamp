@@ -1,0 +1,163 @@
+/* GLOBAL */
+
+h1, h2, h3 {
+    font-family: stratos, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    
+}
+
+h1 {
+    font-size: 40px;
+    line-height: 40px;
+    padding-top: 55px;
+    padding-bottom: 38px
+
+}
+
+h2 {
+    font-size: 22px;
+    min-height: 22px;
+    background-color: transparent;
+}
+
+h3 {
+    font-size: 28px;
+    min-height: 28px;
+    background-color: transparent;
+}
+
+.container100 {width: 100%}
+
+/* HEADER */
+
+header {
+    height: 556px;
+}
+
+.card-form{
+    background-color: white;
+    max-width: 560px;
+}
+/* A LA CARTE */
+
+.row > div {
+    /* background-color: white; */
+    /* border: solid 1px red; */
+    margin-bottom: 35px;
+}
+
+.carte {
+    height: 150px;
+    width: 100%;
+    background-size: cover;
+}
+
+.carte > h1 {
+    color: white;
+    text-align: center
+}
+
+p{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    background-color: transparent;
+}
+
+ #a-la-carte a {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+    color: #00A396;
+    padding-top: 0;
+    text-decoration: none;
+    
+}
+
+/* CHOIX DU COIN */
+
+#examples {
+    background-color: #FCEAE4;
+    
+}
+
+/* #examples:before {
+        content:"";
+        background-color:#CCFFFF;
+        position: absolute;
+        height: 100%;
+        width: 4000px;
+        left: -2000px;
+        z-index: -1;
+} */
+
+
+#examples p {
+    margin-top: 0;  
+}
+
+#examples h2 {
+    margin-bottom: 4px;
+    margin-top: 7px;
+}
+
+#examples .carte {
+    height: 175px;
+}
+
+/* OPTIONS */
+
+#options a {
+    font-family: stratos, sans-serif;
+    font-size: 28px;
+    line-height: 28px;
+    color: black;
+    background-color: #F9FAFA;
+    text-decoration: none;
+    padding: 10px 10px;
+    border-radius: 7px;
+    margin-bottom: 18px;
+    margin-right: 18px;
+}
+.hashtag {
+    width: 980px
+}
+
+#options div {
+    margin-bottom: 20px;
+}
+
+/* CHAUD */
+
+#chaud {
+    background-color: #F9FAFA;
+  
+}
+
+#chaud div{
+    height: 170px;
+}
+
+button {
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
