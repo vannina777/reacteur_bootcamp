@@ -1,6 +1,25 @@
 /* GLOBAL */
 
-h1, h2, h3 {
+.bg-red{
+    background-color: #ED4637;
+} 
+
+.bg-orange{
+    background-color: #F17F30;
+} 
+
+.bg-grey{
+    background-color: #BAC3C3;
+} 
+
+.bg-deliveroo {
+    background-color: #5ACDBD;
+}
+.color-deliveroo {
+    color: #5ACDBD;
+}
+
+h1, h2, h3, h4 {
     font-family: stratos, sans-serif;
     font-weight: 600;
     font-style: normal;
@@ -9,9 +28,11 @@ h1, h2, h3 {
 
 h1 {
     font-size: 40px;
-    line-height: 40px;
+    line-height: 48px;
     padding-top: 55px;
-    padding-bottom: 38px
+    padding-bottom: 38px;
+    letter-spacing: -0.03em;
+    color: #461E63;
 
 }
 
@@ -25,6 +46,14 @@ h3 {
     font-size: 28px;
     min-height: 28px;
     background-color: transparent;
+    margin-bottom: 0;
+}
+
+h5 {
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'IBM Plex Sans', sans-serif;
+
 }
 
 .container100 {width: 100%}
@@ -35,9 +64,24 @@ header {
     height: 556px;
 }
 
+header a {
+    text-decoration: none;
+}
+#welcome-header {
+    width: 50%
+}
+
+menu {
+    padding: 0;
+}
+
+menu img {
+    height: 30px
+}
+
 .card-form{
     background-color: white;
-    max-width: 560px;
+
 }
 /* A LA CARTE */
 
@@ -45,6 +89,12 @@ header {
     /* background-color: white; */
     /* border: solid 1px red; */
     margin-bottom: 35px;
+}
+
+#a-la-carte .row > div > div {
+background-size: cover;
+background-position: center;  
+height: 150px
 }
 
 .carte {
@@ -137,17 +187,135 @@ p{
   
 }
 
-#chaud div{
-    height: 170px;
+#chaud .row >div:nth-child(1){
+    background-image: url(https://cwa.roocdn.com/_next/static/business.33b3f32a.jpg);
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+
+}
+#chaud .row >div:nth-child(4){
+    background-image: url(https://cwa.roocdn.com/_next/static/apps.f69c41a1.svg);
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+
 }
 
-button {
-    font-size: 16px;
-    line-height: 24px;
+#chaud .row >div:nth-child(2){
+    background-color: white
+
+}
+#chaud .row >div:nth-child(3){
+   background-color: white
+
+}
+
+.lat-right-biseau {
+    background-color: white;
+    width: 100px;
+    height: 200%;
+    right: -60px;
+    transform: rotateZ(8deg);
+}
+
+.lat-left-biseau {
+    background-color: white;
+    width: 100px;
+    height: 200%;
+    left: -80px;
+    top: -10px;
+    transform: rotateZ(8deg);
+}
+
+
+/* WORK WITH US */
+
+h4 {
+    font-size: 40px;
+    font-size: 40px;
+    background-color: transparent;
+}
+
+#work img {
+    width: 100%
+}
+
+.test {
+    border: 1px solid black;
+    background-color: #ED4637;
+    height: 50%;
+}
+
+.bis-work{
+    height: 50px; /* 50 */
+    width: 500px; /* 500 */
+    transform: rotate(-7deg);
+    position: absolute;
+    bottom: -15px;
+    left: -20px;
+}
+.hcard {
+    overflow: hidden;
+    
+    position:relative;
+    
+    
 }
 
 
 
+#work p {
+    color: white;
+    background-color: transparent;
+}
+
+#work article {
+    height: 570px;
+    margin-bottom: 15px;
+}
+
+
+
+
+@media(max-width:980px) {
+    h3 {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    h4{
+        font-size: 32px;
+        line-height: 32px;
+    }
+}
+
+@media(max-width:768px) {
+    #chaud .row > div:nth-child(3) p {
+        display:none;
+    }
+    #work article {
+        height: auto;
+    }
+    .bis-work {
+        height: 500px;
+        width: 1000px; 
+        bottom: -440px;
+    }
+}
+
+@media (max-width: 540px) {
+    #welcome-header {
+        position: relative;
+        width: 100%;
+        
+    }
+
+    .card-form {
+        position: absolute;
+        bottom: -200px;
+        margin: auto;
+    }
+}
 
 
 

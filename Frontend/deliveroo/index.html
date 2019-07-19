@@ -20,26 +20,41 @@
 <body>
 
     <header class="bg-info">
-        <div class="container">
+        <div class="container ">
 
+            <menu>
+                <img src="https://consumer-component-library.roocdn.com/14.4.0/static/images/logo-white.ab7fec09c226528ad294a56a53bf5ea6.svg"
+                    alt="">
+            </menu>
 
-            <h1> Deliveroo </h1>
-            <div class="d-flex flex-column card-form">
-                <h5> Renseignez votre adresse
-                </h5>
+            <div id="welcome-header">
+                <h1> Vos restaurants préférés, livrés chez vous en un clic </h1>
+                <div class="d-flex flex-column card-form p-4 rounded-sm ">
+                    <h5> Renseignez votre adresse
+                    </h5>
 
-                <input type="text">
+                    <form>
+                        <div class="form-row">
+                            <div class="col-8">
+                                <input type="text" class="form-control p-4" placeholder="Saisissez votre adresse">
+                            </div>
+                            <div class="col-4">
+                                <button type="submit"
+                                    class="btn btn-primary bg-deliveroo border-0 p-2">Rechercher</button>
+                            </div>
+                        </div>
+                    </form>
 
-                <a href="" class="btn btn-primary col-8">Rechercher</a>
-                <h5 class="col-4"> Connectez vous pour vos adresses récentes</h5>
+                    <h5> <a href="" class="color-deliveroo">Connectez vous</a> pour vos adresses récentes</h5>
 
+                </div>
             </div>
         </div>
 
     </header>
 
     <section id="a-la-carte">
-        <div class="container">
+        <div class="container-fluid container">
 
 
             <h1> A la carte</h1>
@@ -118,7 +133,7 @@
 
     <section id="examples">
 
-        <div class="container">
+        <div class="container-fluid container">
 
             <h1> Vous les aimez, nous vous les livrons.</h1>
             <div class="row justify-content-between">
@@ -262,7 +277,7 @@
     </section>
 
     <section id="options">
-        <div class="container">
+        <div class="container-fluid container">
             <h1> Vous souhaitez plus d'options ?</h1>
             <div class="d-flex flex-wrap ">
                 <a href="">halal</a>
@@ -285,31 +300,35 @@
     </section>
 
     <section id="chaud">
-        <div class="container">
+        <div class="container-fluid container">
             <h1> Tout Chaud</h1>
             <div class="row">
 
                 <!-- ROW 1 -->
-                <div class="col-6"
-                    style="background-image: url(https://cwa.roocdn.com/_next/static/business.33b3f32a.jpg)">
-
+                <div class="col-6 position-relative overflow-hidden">
+                    <div class="lat-right-biseau position-absolute"> </div>
                 </div>
 
-                <div class="col-6">
+                <div class=" col-6 d-flex flex-column justify-content-center">
 
                     <h3>Deliveroo for Business</h3>
                     <p>Employés ou clients affamés, notre équipe corporate est là pour vous aider.</p>
-                    <button type="button" class="btn btn-info"> Se renseigner </button>
+                    <a class="btn btn-info align-self-start bg-deliveroo py-2 px-3 text-white border-0"> Se renseigner
+                    </a>
                 </div>
 
                 <!-- ROW 2 -->
-                <div class="col-6">
+                <div class="col-6 d-flex flex-column justify-content-center pl-4">
 
+                    <h3>Avez-vous l'application ?</h3>
+                    <p>Gardez Deliveroo dans votre poche ! Disponible sur l'App Store et Google Play.</p>
+                    <a href=""><img
+                            src="https://consumer-component-library.roocdn.com/14.4.0/static/images/app-store-badges-fr.1640620b1c1471ee431bc5b585b41923.svg"
+                            alt=""></a>
                 </div>
-                <div class="bg-info col-6">
-                    One of three columns
+                <div class="col-6 position-relative overflow-hidden">
+                    <div class="lat-left-biseau position-absolute"> </div>
                 </div>
-
 
             </div>
         </div>
@@ -317,19 +336,52 @@
     </section>
 
 
-    <section>
-        <div class="container">
-            <h1> Travailler avec nous</h1>
-            <div class="row justify-content-between">
-                <div class="col-sm-12 col-lg-4">
-                    <div class="bg-info"> One of three columns</div>
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    One of three columns
-                </div>
-                <div class="col-sm-12 col-lg-4">
-                    One of three columns
-                </div>
+    <section id="work">
+        <div class="container-fluid container">
+            <h1> Travailler avec Deliveroo</h1>
+            <div class="row">
+                <article class="col-sm-12 col-lg-4 hCardHeight">
+                    <!-- hCard -->
+                    <div class="hcard">
+                        <img src="https://cwa.roocdn.com/_next/static/riders.6856d560.jpg" alt="">
+                        <div class="bis-work bg-red"> </div>
+                    </div>
+                    <div class="bg-red p-4">
+                        <h4 class="text-white">Bikers</h4>
+                        <p> Deviens coursier et travaille en toute liberté. Profite d'une rémunération attractive et
+                            de plein de réductions, entre autres avantages !</p>
+                        <a class="btn btn-info align-self-start bg-deliveroo py-2 px-3 text-white border-0 mt-3">
+                            Devenir biker
+                        </a>
+                    </div>
+
+                </article>
+                <article class="col-sm-12 col-lg-4 hCardHeight">
+                    <div class="hcard"><img src="https://cwa.roocdn.com/_next/static/restaurants.2a02d1a0.jpg" alt="">
+                        <div class="bis-work bg-orange"> </div>
+                    </div>
+                    <div class="bg-orange p-4">
+                        <h4 class="text-white">Restaurants</h4>
+                        <p> Devenez partenaire de Deliveroo et attirez encore plus de clients. Nous gérons la livraison,
+                            vous ne gérez que la préparation !</p>
+                        <a class="btn btn-info align-self-start bg-deliveroo py-2 px-3 text-white border-0 mt-3">
+                            Devenir partenaire
+                        </a>
+                    </div>
+                </article>
+                <article class="col-sm-12 col-lg-4 hCardHeight">
+                    <div class="hcard"><img src="https://cwa.roocdn.com/_next/static/team.86d7b512.jpg" alt="">
+                        <div class="bis-work bg-grey"> </div>
+                    </div>
+                    <div class="bg-grey p-4">
+                        <h4 class="text-white">Carrières</h4>
+                        <p> Notre mission est de révolutionner la manière dont vous commandez vos plats. C'est un projet
+                            ambitieux, comme </p>
+                        <a class="btn btn-info align-self-start bg-deliveroo py-2 px-3 text-white border-0 mt-3"> En
+                            savoir plus
+                        </a>
+                    </div>
+                </article>
 
             </div>
         </div>
@@ -342,7 +394,7 @@
 
 
 
-
+    <script src="./assets/js/script.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
