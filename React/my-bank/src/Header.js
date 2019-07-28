@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Logo from './LogoRevolut.png'
 import User from './User.js'
 
 class Header extends React.Component {
@@ -7,7 +8,7 @@ class Header extends React.Component {
         return (<header>
             <div className="container Header--flex">
 
-                <h1> My Bank </h1>
+                <img src={Logo} alt='Logo'></img>
                 <User name='Theau' />
 
             </div>

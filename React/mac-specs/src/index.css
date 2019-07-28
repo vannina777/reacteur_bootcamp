@@ -1,0 +1,167 @@
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.container {
+  width: 980px;
+  margin: auto;
+}
+
+.Header--top {
+  height: 46px;
+  background-color: #313131;
+}
+
+.Header--bottom {
+  border-bottom: solid 1px grey;
+  vertical-align: middle;
+  margin-bottom: 30px;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 46px;
+  font-weight: 600;
+}
+
+.Description--container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /*   border: 1px solid black; */
+}
+
+.Description--container > div {
+  width: 50%;
+}
+
+.Description--container h3 {
+  font-size: 48px;
+  line-height: 42px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.Description--container img {
+  width: 380px;
+  text-align: center;
+}
+
+.isFixed {
+  position: fixed;
+  top: 27px;
+}
+
+.Description--container p {
+  font-size: 15px;
+  line-height: 27px;
+}
+
+.Description--container h1 {
+  font-size: 18px;
+  line-height: 27px;
+  font-weight: 600;
+  margin: 20px 0;
+}
+
+.software {
+  display: flex;
+}
+
+.software .SpecList--button {
+  padding: 0;
+}
+
+.software > div {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  height: 80px;
+  justify-content: center;
+}
+
+.SpecList--button {
+  /* height: 75px; */
+  border: solid 1px rgb(190, 190, 190);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 0.3rem;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.SpecList--button > p {
+  max-width: 280px;
+  word-wrap: break-word;
+  font-size: 18px;
+  line-height: 27px;
+}
+
+.SpecList--button p:nth-child(1) {
+  font-weight: 600;
+  text-align: left;
+}
+
+.SpecList--button p:nth-child(2) {
+  font-size: 17px;
+  line-height: 21px;
+  text-align: right;
+}
+
+.activated {
+  border: solid 2px #1570c9;
+}
+
+h5 {
+  font-size: 24px;
+  line-height: 28px;
+  font-weight: 600;
+  margin-top: 25px;
+}
+
+.filler {
+  height: 170px;
+}
+
+.Footer {
+  height: 115px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0px;
+  background-color: #f8f8f8;
+  border-top: solid 1px rgb(204, 204, 204);
+}
+
+.Footer--elements {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 30px;
+}
+
+.Footer span {
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 600;
+}
+
+.Footer button {
+  font-size: 17px;
+  line-height: 25px;
+  margin-left: 30px;
+  background-image: linear-gradient(rgb(66, 161, 236), rgb(0, 112, 201));
+  border: solid 1px rgb(0, 112, 201);
+  color: white;
+  border-radius: 0.3em;
+}

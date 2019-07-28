@@ -7,11 +7,7 @@ class Accounts extends React.Component {
         const accounts = this.props.data
 
         const accountsList = accounts.map((account, index, array) => {
-            let CSSclass = 'Account--header'
-            if (index % 2 !== 0) {
-                CSSclass += ' isPink'
-            }
-            return (<Account data={this.props.data[index]} headerClass={CSSclass} />)
+            return (<Account data={this.props.data[index]} />)
         })
 
         return (

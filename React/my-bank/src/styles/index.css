@@ -25,6 +25,10 @@ header h1 {
 
 }
 
+header img {
+  height: 40px;
+}
+
 .Header--flex{
   display: flex;
   align-items: center;
