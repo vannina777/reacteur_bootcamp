@@ -5,9 +5,12 @@
 ### Start the Game
 
 Click on one of the game modes to start a game.
+![](gameModeGif.gif)
 
 ### Play
 To make your move, you only need to click on the square you want to fill with your mark.
+
+![](gameClickGif.gif)
 
 ## Features
 
@@ -22,6 +25,8 @@ There is no time limit: you can take all the hours you want to plan your next mo
 In this game mode you will play against an (dumbed down) AI. Hours upon hours of free entertaining !
 
 ### Cool Banner for the winner
+
+![](gameWin.gif)
 
 (because yeah)
 
