@@ -29,6 +29,7 @@ class Description extends React.Component {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2
     });
+
     const softwares = [
       {
         name: "Final Cut Pro",
@@ -42,6 +43,7 @@ class Description extends React.Component {
       }
     ];
 
+    // needs to go in its own component
     const softwareElements = softwares.map((software, index) => {
       let cssOne = "SpecList--button";
       let cssTwo = "SpecList--button";

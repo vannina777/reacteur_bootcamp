@@ -25,7 +25,6 @@ class SpecList extends React.Component {
           key={index}
           className={css}
           onClick={e => {
-            // call function in another component to set state there and pass as props
             e.stopPropagation();
             onSelection(pieceName, index);
           }}
