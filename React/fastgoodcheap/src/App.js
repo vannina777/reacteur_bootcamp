@@ -39,6 +39,23 @@ class App extends React.Component {
   };
 
   render = () => {
+    const stateList = Object.keys(this.state);
+    const buttonList = stateList.map((state, index) => {
+      return (
+        <div className="flex">
+          <label className="switch">
+            <input
+              type="checkbox"
+              checked={this.state.fast ? "yes" : ""}
+              onChange={() => this.onSelection("fast")}
+            />{" "}
+            <span className="slider slider-1" />{" "}
+          </label>
+          <span> Fast </span>
+        </div>
+      );
+    });
+
     return (
       <div className="container">
         <form>
