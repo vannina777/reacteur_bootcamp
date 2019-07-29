@@ -1,0 +1,143 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  margin-top: 30px;
+  margin-left: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.middleCard {
+  position: absolute;
+  background-color: white;
+  height: 100px;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* border: solid 1px violet; */
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 4px #d6d6d6;
+          box-shadow: 0 0 4px #d6d6d6;
+}
+
+.middleCard h1 {
+  font-size: 45px;
+}
+
+.player-indicator {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.turn-indicator {
+  font-size: 35px;
+  line-height: 42px;
+  text-align: center;
+  border: 1px solid #f3f3f3;
+  width: 100px;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.active {
+  -webkit-box-shadow: 0 3px #53bead, 0 4px 4px grey;
+          box-shadow: 0 3px #53bead, 0 4px 4px grey;
+}
+
+.Board {
+  height: 300px;
+  width: 300px;
+  background-color: aqua;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 25px 0;
+}
+
+.Square {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border: solid 4px #53bead;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.Square h2 {
+  font-size: 45px;
+  font-weight: 800;
+}
+
+.removeBorderLeft {
+  border-left: 0;
+}
+
+.removeBorderRight {
+  border-right: 0;
+}
+
+.removeBorderTop {
+  border-top: 0;
+}
+
+.removeBorderBottom {
+  border-bottom: 0;
+}
+
+button {
+  font-size: 25px;
+  line-height: 42px;
+  text-align: center;
+  border: 1px solid #f3f3f3;
+  border-radius: 10px;
+  margin: 15px;
+  cursor: pointer;
+}
+/*# sourceMappingURL=style.css.map */
