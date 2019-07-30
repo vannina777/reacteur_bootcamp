@@ -2,44 +2,42 @@ import React from "react";
 
 import Square from "./Square.js";
 
-class Board extends React.Component {
-  render = () => {
-    const { positions } = this.props;
+const Board = props => {
+  const { positions, clickHandler } = props;
 
-    const square = positions.map((curr, index) => {
-      let style = "";
-      if (index === 0 || index === 1 || index === 2) {
-        style += " removeBorderTop";
-      }
+  const square = positions.map((curr, index) => {
+    let style = "";
+    if (index === 0 || index === 1 || index === 2) {
+      style += " removeBorderTop";
+    }
 
-      if (index === 6 || index === 7 || index === 8) {
-        style += " removeBorderBottom";
-      }
+    if (index === 6 || index === 7 || index === 8) {
+      style += " removeBorderBottom";
+    }
 
-      if (index === 0 || index === 3 || index === 6) {
-        style += " removeBorderLeft";
-      }
+    if (index === 0 || index === 3 || index === 6) {
+      style += " removeBorderLeft";
+    }
 
-      if (index === 2 || index === 5 || index === 8) {
-        style += " removeBorderRight";
-      }
-
-      return (
-        <Square
-          key={index}
-          content={positions[index]}
-          clickHandler={() => this.props.clickHandler(index)}
-          xxx={style}
-        />
-      );
-    });
+    if (index === 2 || index === 5 || index === 8) {
+      style += " removeBorderRight";
+    }
 
     return (
-      <div>
-        <div className="Board">{square}</div>
-      </div>
+      <Square
+        key={index}
+        content={positions[index]}
+        clickHandler={() => clickHandler(index)}
+        xxx={style}
+      />
     );
-  };
-}
+  });
+
+  return (
+    <div>
+      <div className="Board">{square}</div>
+    </div>
+  );
+};
 
 export default Board;

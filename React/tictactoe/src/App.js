@@ -3,18 +3,26 @@ import { motion } from "framer-motion";
 
 import Board from "./Board.js";
 
-class App extends React.Component {
-  state = {
-    positions: ["X", "O", "X", "O", "X", "O", "X", "O", "X"],
-    isXturn: true,
-    gameStarted: false,
-    gameType: "",
-    winner: null,
-    move: 0
-  };
+const App = () => {
+  const [positions, setPosition] = React.useState([
+    "X",
+    "O",
+    "X",
+    "O",
+    "X",
+    "O",
+    "X",
+    "O",
+    "X"
+  ]);
+  const [isXturn, setXturn] = React.useState(true);
+  const [gameStarted, setGameStarted] = React.useState(false);
+  const [gameType, setGameType] = React.useState(null);
+  const [winner, setWinner] = React.useState(null);
+  const [move, setMove] = React.useState(0);
 
   // checks state to identify winner
-  checkWinner = () => {
+  const checkWinner = () => {
     const winnerPosition = [
       [0, 1, 2],
       [3, 4, 5],
@@ -28,23 +36,22 @@ class App extends React.Component {
 
     for (let i = 0; i < winnerPosition.length; i++) {
       const [a, b, c] = winnerPosition[i];
-      if (
-        this.state.positions[a] === this.state.positions[b] &&
-        this.state.positions[a] === this.state.positions[c]
-      ) {
-        if (this.state.positions[a] !== "") {
-          console.log("The winner is player" + this.state.positions[a]);
-          this.setState({
+      if (positions[a] === positions[b] && positions[a] === positions[c]) {
+        if (positions[a] !== "") {
+          console.log("The winner is player" + positions[a]);
+          setGameStarted(false);
+          setWinner(positions[a]);
+          /* this.setState({
             gameStarted: false,
-            winner: this.state.positions[a]
-          });
+            winner: positions[a]
+          }); */
         }
       }
     }
   };
 
   // resets game state
-  newGame = computer => {
+  const newGame = computer => {
     const resetState = {
       positions: ["", "", "", "", "", "", "", "", ""],
       isXturn: true,
@@ -53,6 +60,7 @@ class App extends React.Component {
       move: 0
     };
 
+    // impossible hook ?
     if (computer) {
       resetState["gameType"] = "computer";
     } else {
@@ -61,91 +69,78 @@ class App extends React.Component {
     this.setState(resetState);
   };
 
-  computerChoice = () => {
+  const computerChoice = () => {
     let choice = Math.floor(Math.random() * 9);
-    while (
-      this.state.positions[choice] === "O" ||
-      this.state.positions[choice] === "X"
-    ) {
+    while (positions[choice] === "O" || positions[choice] === "X") {
       choice = Math.floor(Math.random() * 9);
     }
     return choice;
   };
 
   // handles players' clicks
-  clickHandler = index => {
+  const clickHandler = index => {
     const state = this.state;
-    if (state.positions[index] === "" && this.state.gameStarted) {
-      this.state.isXturn
-        ? (state.positions[index] = "X")
-        : (state.positions[index] = "O");
-      state.isXturn = !this.state.isXturn;
+    if (state.positions[index] === "" && gameStarted) {
+      isXturn ? (state.positions[index] = "X") : (state.positions[index] = "O");
+
+      setXturn(!isXturn);
+      setMove(move + 1);
+      /* 
+      state.isXturn = !isXturn;
       state.move += 1;
       this.setState({ state }, () => {
         this.checkWinner();
-      });
+      }); */
     }
   };
 
-  render = () => {
-    if (
-      this.state.isXturn === false &&
-      this.state.gameType === "computer" &&
-      this.state.winner === null &&
-      this.state.move < 9
-    ) {
-      window.setTimeout(() => {
-        const computerChoice = this.computerChoice();
-        this.clickHandler(computerChoice);
-        console.log("I am stucked");
-      }, 700);
-    }
-    return (
-      <div className="container">
-        {this.state.winner ? (
-          <div className="middleCard">
-            <h1> 🎉 Player {this.state.winner} won ! 🎉 </h1>
-          </div>
-        ) : null}
-        {this.state.move === 9 && this.state.winner === null ? (
-          <div className="middleCard">
-            <h1> This is a draw </h1>
-          </div>
-        ) : null}
-        <div className="player-indicator">
-          <div
-            className={
-              this.state.isXturn ? "turn-indicator active" : "turn-indicator "
-            }
-          >
-            X
-          </div>{" "}
-          <div
-            className={
-              this.state.isXturn ? "turn-indicator" : "turn-indicator active"
-            }
-          >
-            O
-          </div>{" "}
+  if (
+    isXturn === false &&
+    gameType === "computer" &&
+    winner === null &&
+    move < 9
+  ) {
+    window.setTimeout(() => {
+      const computerChoi = computerChoice();
+      clickHandler(computerChoi);
+      console.log("I am stucked");
+    }, 700);
+  }
+  return (
+    <div className="container">
+      {winner ? (
+        <div className="middleCard">
+          <h1> 🎉 Player {winner} won ! 🎉 </h1>
         </div>
-        <Board
-          positions={this.state.positions}
-          clickHandler={this.clickHandler}
-        />
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={() => this.newGame()}
-        >
-          {" "}
-          New Game
-        </motion.button>{" "}
-        <button onClick={() => this.newGame("computer")}>
-          {" "}
-          New Game vs. Computer
-        </button>
+      ) : null}
+      {move === 9 && winner === null ? (
+        <div className="middleCard">
+          <h1> This is a draw </h1>
+        </div>
+      ) : null}
+      <div className="player-indicator">
+        <div className={isXturn ? "turn-indicator active" : "turn-indicator "}>
+          X
+        </div>{" "}
+        <div className={isXturn ? "turn-indicator" : "turn-indicator active"}>
+          O
+        </div>{" "}
       </div>
-    );
-  };
-}
+      <Board positions={positions} clickHandler={clickHandler} />
+      <motion.button
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        onClick={() => newGame()}
+      >
+        {" "}
+        New Game
+      </motion.button>{" "}
+      <button onClick={() => newGame("computer")}>
+        {" "}
+        New Game vs. Computer
+      </button>
+    </div>
+  );
+};
+
 export default App;

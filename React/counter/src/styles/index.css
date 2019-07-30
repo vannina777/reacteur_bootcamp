@@ -19,12 +19,10 @@ h1 {
   padding-top: 20px;
 }
 
-
 .container {
   width: 1024px;
   margin: auto;
 }
-
 
 .Counter {
   padding: 20px;
@@ -32,14 +30,12 @@ h1 {
   justify-content: space-between;
 }
 
-
-.Counter--screen{
+.Counter--screen {
   background-color: aqua;
   text-align: center;
-
 }
 
 .Counter button {
-  display: inline;
-  width: 30px
+  display: inline-block;
+  width: 30px;
 }
