@@ -47,6 +47,7 @@ code {
   border-radius: 10px;
   -webkit-box-shadow: 0 0 4px #d6d6d6;
           box-shadow: 0 0 4px #d6d6d6;
+  z-index: 99;
 }
 
 .middleCard h1 {
@@ -139,5 +140,30 @@ button {
   border-radius: 10px;
   margin: 15px;
   cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+button:active {
+  background-color: #e6e6e6;
+}
+
+.svg-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: black;
+  stroke-width: 4;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 4;
 }
 /*# sourceMappingURL=style.css.map */

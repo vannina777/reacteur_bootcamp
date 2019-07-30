@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 14px;
+  color: rgb(182, 182, 182);
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 12px;
+}
+
+@mixin container {
+  width: 1024px;
+  margin: auto;
+}
+
+@mixin displayFlex($type) {
+  display: flex;
+  flex-direction: $type;
+}
+
+.container {
+  @include container;
+}
+
+.mounted {
+  border-bottom: solid 3px black;
+}
+
+.Tabs {
+  @include container;
+  margin: 30px auto;
+  @include displayFlex(row);
+
+  h4 {
+    margin-right: 40px;
+    font-size: 25px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-bottom: 5px;
+    line-height: 30px;
+  }
+}
+
+.Card {
+  /* border: solid 1px black; */
+  box-shadow: 0 0 4px rgb(202, 202, 202);
+  width: 500px;
+  display: flex;
+  height: 278px;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+img {
+  width: 185px;
+  height: 278px;
+}
+
+.Main-display {
+  width: 1024px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Card-text {
+  padding-left: 20px;
+  padding-right: 8px;
+}

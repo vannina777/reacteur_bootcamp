@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 import Board from "./Board.js";
 
@@ -131,7 +132,14 @@ class App extends React.Component {
           positions={this.state.positions}
           clickHandler={this.clickHandler}
         />
-        <button onClick={() => this.newGame()}> New Game</button>{" "}
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => this.newGame()}
+        >
+          {" "}
+          New Game
+        </motion.button>{" "}
         <button onClick={() => this.newGame("computer")}>
           {" "}
           New Game vs. Computer

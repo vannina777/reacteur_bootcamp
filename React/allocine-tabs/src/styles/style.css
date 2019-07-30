@@ -1,0 +1,94 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+h1 {
+  padding-top: 20px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 14px;
+  color: #b6b6b6;
+  margin-bottom: 30px;
+}
+
+p {
+  font-size: 12px;
+}
+
+.container {
+  width: 1024px;
+  margin: auto;
+}
+
+.mounted {
+  border-bottom: solid 3px black;
+}
+
+.Tabs {
+  width: 1024px;
+  margin: auto;
+  margin: 30px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.Tabs h4 {
+  margin-right: 40px;
+  font-size: 25px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 5px;
+  line-height: 30px;
+}
+
+.Card {
+  /* border: solid 1px black; */
+  -webkit-box-shadow: 0 0 4px #cacaca;
+          box-shadow: 0 0 4px #cacaca;
+  width: 500px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 278px;
+  margin-bottom: 30px;
+  background-color: white;
+}
+
+img {
+  width: 185px;
+  height: 278px;
+}
+
+.Main-display {
+  width: 1024px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Card-text {
+  padding-left: 20px;
+  padding-right: 8px;
+}
+/*# sourceMappingURL=style.css.map */

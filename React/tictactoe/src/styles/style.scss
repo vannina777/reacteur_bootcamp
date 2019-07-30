@@ -37,6 +37,7 @@ code {
   h1 {
     font-size: 45px;
   }
+  z-index: 99;
 }
 
 .player-indicator {
@@ -104,4 +105,29 @@ button {
   border-radius: 10px;
   margin: 15px;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    background-color: rgb(230, 230, 230);
+  }
+}
+
+.svg-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: black;
+  stroke-width: 4;
+}
+
+.svg-icon circle {
+  stroke: #4691f6;
+  stroke-width: 4;
 }
