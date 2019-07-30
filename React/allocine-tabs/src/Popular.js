@@ -7,13 +7,31 @@ class Popular extends React.Component {
     isLoading: false,
     page: 1 // change here
   };
-  componentDidMount = async () => {
+
+  getData = async () => {
+    const url =
+      "https://api-allocine.herokuapp.com/api/movies/popular/?p=" +
+      parseInt(this.state.page);
     this.setState({ isLoading: true });
-    const response = await Axios.get(
-      "https://api-allocine.herokuapp.com/api/movies/popular"
-    );
+    const response = await Axios.get(url);
     console.log("this is axios" + response.data["results"]);
     this.setState({ data: response.data.results, isLoading: false });
+  };
+
+  componentDidMount = async () => {
+    this.getData();
+  };
+
+  buttonHandling = sign => {
+    if (sign === "next") {
+      this.setState({ page: this.state.page + 1 }, () => {
+        this.getData();
+      });
+    } else if (sign === "previous") {
+      this.setState({ page: this.state.page - 1 }, () => {
+        this.getData();
+      });
+    }
   };
 
   render = () => {
@@ -41,13 +59,21 @@ class Popular extends React.Component {
     return (
       <div className="Main-display">
         {objects}
+        {this.state.page > 1 && (
+          <button
+            onClick={() => {
+              this.buttonHandling("previous");
+            }}
+          >
+            PEVIOUS
+          </button>
+        )}
         <button
           onClick={() => {
-            console.log("I go next page");
+            this.buttonHandling("next");
           }}
         >
-          {" "}
-          NEXT{" "}
+          NEXT
         </button>
       </div>
     );

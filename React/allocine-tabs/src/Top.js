@@ -4,16 +4,34 @@ import Axios from "axios";
 class Top extends React.Component {
   state = {
     data: [],
-    isLoading: false
+    isLoading: false,
+    page: 1 // change here
+  };
+
+  getData = async () => {
+    const url =
+      "https://api-allocine.herokuapp.com/api/movies/top-rated/?p=" +
+      parseInt(this.state.page);
+    this.setState({ isLoading: true });
+    const response = await Axios.get(url);
+    console.log("this is axios" + response.data["results"]);
+    this.setState({ data: response.data.results, isLoading: false });
   };
 
   componentDidMount = async () => {
-    this.setState({ isLoading: true });
-    const response = await Axios.get(
-      "https://api-allocine.herokuapp.com/api/movies/top_rated"
-    );
-    console.log("this is axios" + response.data["results"]);
-    this.setState({ data: response.data.results, isLoading: false });
+    this.getData();
+  };
+
+  buttonHandling = sign => {
+    if (sign === "next") {
+      this.setState({ page: this.state.page + 1 }, () => {
+        this.getData();
+      });
+    } else if (sign === "previous") {
+      this.setState({ page: this.state.page - 1 }, () => {
+        this.getData();
+      });
+    }
   };
 
   render = () => {
@@ -38,7 +56,28 @@ class Top extends React.Component {
       );
     });
 
-    return <div className="Main-display">{objects}</div>;
+    return (
+      <div className="Main-display">
+        {objects}
+        {objects}
+        {this.state.page > 1 && (
+          <button
+            onClick={() => {
+              this.buttonHandling("previous");
+            }}
+          >
+            PEVIOUS
+          </button>
+        )}
+        <button
+          onClick={() => {
+            this.buttonHandling("next");
+          }}
+        >
+          NEXT
+        </button>
+      </div>
+    );
   };
 }
 
