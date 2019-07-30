@@ -1,25 +1,36 @@
 import React from "react";
 import Axios from "axios";
 
-class Popular extends React.Component {
+class GenericPage extends React.Component {
+  _isMounted = false;
+
   state = {
     data: [],
     isLoading: false,
-    page: 1 // change here
+    page: 1
   };
 
   getData = async () => {
     const url =
-      "https://api-allocine.herokuapp.com/api/movies/popular/?p=" +
+      "https://api-allocine.herokuapp.com/api/movies/" +
+      this.props.pageName +
+      "?p=" +
       parseInt(this.state.page);
     this.setState({ isLoading: true });
     const response = await Axios.get(url);
     console.log("this is axios" + response.data["results"]);
-    this.setState({ data: response.data.results, isLoading: false });
+    if (this._isMounted === true) {
+      this.setState({ data: response.data.results, isLoading: false });
+    }
   };
 
   componentDidMount = async () => {
+    this._isMounted = true;
     this.getData();
+  };
+
+  componentWillUnmount = () => {
+    this._isMounted = false;
   };
 
   buttonHandling = sign => {
@@ -45,6 +56,7 @@ class Popular extends React.Component {
                 "https://image.tmdb.org/t/p/w370_and_h556_bestv2/" +
                 curr.poster_path
               }
+              alt="poster"
             />
           </div>
           <div className="Card-text">
@@ -58,6 +70,7 @@ class Popular extends React.Component {
 
     return (
       <div className="Main-display">
+        {objects}
         {objects}
         {this.state.page > 1 && (
           <button
@@ -80,4 +93,4 @@ class Popular extends React.Component {
   };
 }
 
-export default Popular;
+export default GenericPage;

@@ -1,18 +1,16 @@
 import React from "react";
 
-import Popular from "./Popular";
-import Upcoming from "./Upcoming";
-import Top from "./Top";
 import Header from "./Header";
+import GenericPage from "./GenericPage";
 
 class App extends React.Component {
   state = {
-    tab: 1
+    tab: "popular"
   };
 
-  mountNew = tabIndex => {
+  mountNew = tabName => {
     let state = {};
-    state["tab"] = tabIndex;
+    state["tab"] = tabName;
     this.setState(state);
   };
 
@@ -23,33 +21,31 @@ class App extends React.Component {
         <div className="Tabs">
           <h4
             onClick={() => {
-              this.mountNew(1);
+              this.mountNew("popular");
             }}
-            className={this.state.tab === 1 ? "mounted" : ""}
+            className={this.state.tab === "popular" ? "mounted" : ""}
           >
             Popular Movies
           </h4>
           <h4
             onClick={() => {
-              this.mountNew(2);
+              this.mountNew("upcoming");
             }}
-            className={this.state.tab === 2 ? "mounted" : ""}
+            className={this.state.tab === "upcoming" ? "mounted" : ""}
           >
             Upcoming Movies
           </h4>
           <h4
             onClick={() => {
-              this.mountNew(3);
+              this.mountNew("top_rated");
             }}
-            className={this.state.tab === 3 ? "mounted" : ""}
+            className={this.state.tab === "top_rated" ? "mounted" : ""}
           >
             Top Rated Movies
           </h4>
         </div>
         <div style={{ backgroundColor: "#F4F4F4" }}>
-          {this.state.tab === 1 && <Popular />}
-          {this.state.tab === 2 && <Upcoming />}
-          {this.state.tab === 3 && <Top />}
+          <GenericPage key={this.state.tab} pageName={this.state.tab} />
         </div>
       </div>
     );

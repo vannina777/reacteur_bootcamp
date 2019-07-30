@@ -21,7 +21,7 @@ h1 {
 h2 {
   font-size: 14px;
   color: rgb(182, 182, 182);
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 p {
@@ -87,4 +87,8 @@ img {
 .Card-text {
   padding-left: 20px;
   padding-right: 8px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
 }
