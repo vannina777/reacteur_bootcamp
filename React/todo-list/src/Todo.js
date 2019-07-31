@@ -6,11 +6,9 @@ class Todo extends React.Component {
     let style = doneStatus === false ? "" : "isDone";
 
     return (
-      <div className="Todo--main">
-        <h2 className={style} onClick={() => handleToDoClick()}>
-          {text}
-        </h2>
-      </div>
+      <li className={style} onClick={() => handleToDoClick()}>
+        {text}
+      </li>
     );
   };
 }
