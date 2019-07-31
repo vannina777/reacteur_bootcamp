@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Board from "./Board.js";
 
 const App = () => {
-  const [positions, setPosition] = React.useState([
+  const [positions, setPositions] = React.useState([
     "X",
     "O",
     "X",
@@ -51,22 +51,22 @@ const App = () => {
   };
 
   // resets game state
-  const newGame = computer => {
-    const resetState = {
-      positions: ["", "", "", "", "", "", "", "", ""],
-      isXturn: true,
-      gameStarted: true,
-      winner: null,
-      move: 0
-    };
+  const newGame = gameType => {
+    setPositions(["", "", "", "", "", "", "", "", ""]);
+    setXturn(true);
+    setGameStarted(true);
+    setWinner(null);
+    setMove(0);
+    setGameType(gameType);
 
-    // impossible hook ?
-    if (computer) {
+    // impossible hook ? need to pass type in function parameter ?
+
+    /* if (computer) {
       resetState["gameType"] = "computer";
     } else {
       resetState["gameType"] = "human";
     }
-    this.setState(resetState);
+    this.setState(resetState); */
   };
 
   const computerChoice = () => {
@@ -77,13 +77,12 @@ const App = () => {
     return choice;
   };
 
-  // handles players' clicks
+  // handles players' clicks || might not work with hooks
   const clickHandler = index => {
-    const state = this.state;
-    if (state.positions[index] === "" && gameStarted) {
-      isXturn ? (state.positions[index] = "X") : (state.positions[index] = "O");
+    if (positions[index] === "" && gameStarted) {
+      isXturn ? (positions[index] = "X") : (positions[index] = "O");
 
-      setXturn(!isXturn);
+      setXturn(!isXturn); // impossible hook ?
       setMove(move + 1);
       /* 
       state.isXturn = !isXturn;
@@ -130,7 +129,7 @@ const App = () => {
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
-        onClick={() => newGame()}
+        onClick={() => newGame("human")}
       >
         {" "}
         New Game

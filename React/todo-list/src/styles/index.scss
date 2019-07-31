@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: grey;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 50px;
+}
+.container {
+  width: 1024px;
+  margin: auto;
+}
+
+li {
+  list-style-type: square;
+}
+
+.Todo--main {
+  h2 {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 15px 0;
+  }
+}
+
+.isDone {
+  text-decoration: line-through;
+}
+
+input {
+  padding: 15px;
+  border-radius: 5px;
+  margin: 10px 10px 10px 0;
+  border: 1px solid grey;
+  width: 200px;
+}
+
+button {
+  padding: 15px;
+  background-color: violet;
+  border: none;
+  border-radius: 5px;
+}
