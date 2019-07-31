@@ -28,7 +28,7 @@ const Board = props => {
         key={index}
         content={positions[index]}
         clickHandler={() => clickHandler(index)}
-        xxx={style}
+        cssStyle={style}
       />
     );
   });

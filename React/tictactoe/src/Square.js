@@ -2,7 +2,7 @@ import React from "react";
 import { motion, useViewportScroll } from "framer-motion";
 
 const Square = props => {
-  const { content, clickHandler, xxx } = props;
+  const { content, clickHandler, cssStyle } = props;
 
   const svgCross = (
     <svg className="svg-icon" viewBox="0 0 20 20">
@@ -22,7 +22,7 @@ const Square = props => {
     </svg>
   );
 
-  let css = "Square" + xxx;
+  let css = "Square" + cssStyle;
 
   return (
     <div className={css} onClick={clickHandler}>

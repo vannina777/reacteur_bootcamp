@@ -15,11 +15,25 @@ const App = () => {
     "O",
     "X"
   ]);
-  const [isXturn, setXturn] = React.useState(true);
   const [gameStarted, setGameStarted] = React.useState(false);
   const [gameType, setGameType] = React.useState(null);
   const [winner, setWinner] = React.useState(null);
   const [move, setMove] = React.useState(0);
+
+  const [isXturn, setXturn] = React.useState(true);
+
+  // triggers computer move when
+  React.useEffect(() => {
+    if (
+      isXturn === false &&
+      gameType === "computer" &&
+      winner === null &&
+      move < 9
+    ) {
+      const computerChoi = computerChoice();
+      clickHandler(computerChoi);
+    }
+  }, [isXturn]);
 
   // checks state to identify winner
   const checkWinner = () => {
@@ -41,10 +55,6 @@ const App = () => {
           console.log("The winner is player" + positions[a]);
           setGameStarted(false);
           setWinner(positions[a]);
-          /* this.setState({
-            gameStarted: false,
-            winner: positions[a]
-          }); */
         }
       }
     }
@@ -58,17 +68,9 @@ const App = () => {
     setWinner(null);
     setMove(0);
     setGameType(gameType);
-
-    // impossible hook ? need to pass type in function parameter ?
-
-    /* if (computer) {
-      resetState["gameType"] = "computer";
-    } else {
-      resetState["gameType"] = "human";
-    }
-    this.setState(resetState); */
   };
 
+  // computer chooses a square to play
   const computerChoice = () => {
     let choice = Math.floor(Math.random() * 9);
     while (positions[choice] === "O" || positions[choice] === "X") {
@@ -82,29 +84,12 @@ const App = () => {
     if (positions[index] === "" && gameStarted) {
       isXturn ? (positions[index] = "X") : (positions[index] = "O");
 
-      setXturn(!isXturn); // impossible hook ?
+      setXturn(!isXturn);
       setMove(move + 1);
-      /* 
-      state.isXturn = !isXturn;
-      state.move += 1;
-      this.setState({ state }, () => {
-        this.checkWinner();
-      }); */
+      checkWinner();
     }
   };
 
-  if (
-    isXturn === false &&
-    gameType === "computer" &&
-    winner === null &&
-    move < 9
-  ) {
-    window.setTimeout(() => {
-      const computerChoi = computerChoice();
-      clickHandler(computerChoi);
-      console.log("I am stucked");
-    }, 700);
-  }
   return (
     <div className="container">
       {winner ? (
