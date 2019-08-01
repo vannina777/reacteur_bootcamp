@@ -13,7 +13,7 @@ const MenuSection = props => {
 
   return (
     <div className="MenuSection">
-      <h2> {name}</h2>
+      <h1> {name}</h1>
       <div className="MenuSection--list">{menuItemsList}</div>
     </div>
   );

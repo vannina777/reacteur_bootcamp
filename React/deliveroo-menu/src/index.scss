@@ -12,15 +12,94 @@ code {
     monospace;
 }
 
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.RestaurantHeader {
+  height: 400px;
+  background-color: white;
+
+  img {
+    height: 200px;
+    width: 350px;
+    object-fit: cover;
+    border-radius: 7px;
+  }
+}
+
+.MenuSection {
+  h1 {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 800;
+  }
+}
+
 .MenuSection--list {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   width: 900px;
 }
 
 .MenuItem {
+  display: flex;
+  justify-content: space-between;
   width: 400px;
-  height: 150px;
+  height: 160px;
+  margin: 20px 0;
   background-color: white;
-  margin: 20px;
+  border-radius: 7px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  h2 {
+    font-size: 18px;
+    line-height: 18px;
+    margin-bottom: 7px;
+    color: #2e3333;
+  }
+  p {
+    color: #808484;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 16px;
+    display: inline-block;
+    height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+.MenuItem--left {
+  display: flex;
+  flex-direction: column;
+  span {
+    font-size: 17px;
+    line-height: 17px;
+  }
+  & span:nth-child(1) {
+    color: #808484;
+    margin-right: 20px;
+  }
+  & span:nth-child(2) {
+    color: #ff8000;
+    font-weight: 600;
+  }
+}
+
+.MenuItem--right {
+  padding-left: 10px;
+
+  img {
+    border-radius: 7px;
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+  }
+}
+
+.MenuItem--pricePopular {
+  display: flex;
+  justify-content: space-between;
 }

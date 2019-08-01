@@ -9,19 +9,120 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+.container {
+  width: 1000px;
+  margin: auto;
+}
+
+.RestaurantHeader {
+  height: 400px;
+  background-color: white;
+}
+
+.RestaurantHeader img {
+  height: 200px;
+  width: 350px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 7px;
+}
+
+.MenuSection h1 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 800;
+}
+
 .MenuSection--list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 900px;
 }
 
 .MenuItem {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 400px;
-  height: 150px;
+  height: 160px;
+  margin: 20px 0;
   background-color: white;
-  margin: 20px;
+  border-radius: 7px;
+  padding: 15px 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.MenuItem h2 {
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 7px;
+  color: #2e3333;
+}
+
+.MenuItem p {
+  color: #808484;
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 16px;
+  display: inline-block;
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.MenuItem--left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.MenuItem--left span {
+  font-size: 17px;
+  line-height: 17px;
+}
+
+.MenuItem--left span:nth-child(1) {
+  color: #808484;
+  margin-right: 20px;
+}
+
+.MenuItem--left span:nth-child(2) {
+  color: #ff8000;
+  font-weight: 600;
+}
+
+.MenuItem--right {
+  padding-left: 10px;
+}
+
+.MenuItem--right img {
+  border-radius: 7px;
+  width: 130px;
+  height: 130px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.MenuItem--pricePopular {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 /*# sourceMappingURL=index.css.map */

@@ -46,7 +46,7 @@ class App extends React.Component {
         {this.state.data === null ? (
           <p> isLoading</p>
         ) : (
-          <div>
+          <div className="container">
             <RestaurantHeader css={{}} data={this.state.data.restaurant} />
 
             {Object.keys(this.state.data.menu).map((curr, index) => {
