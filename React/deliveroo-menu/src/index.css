@@ -28,7 +28,7 @@ code {
 }
 
 .container {
-  width: 87vw;
+  width: 85vw;
   margin: auto;
 }
 
@@ -77,6 +77,73 @@ code {
   margin: 0 30 0 0px;
 }
 
+.Display--main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.Basket {
+  width: 350px;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 7px;
+  -webkit-box-shadow: 0 0 15px #c0c2c2;
+          box-shadow: 0 0 15px #c0c2c2;
+}
+
+.Basket button {
+  width: 100%;
+  height: 30px;
+  background-color: #5acdbd;
+  font-size: 16px;
+  line-height: 16px;
+  color: white;
+  font-weight: 600;
+  margin-bottom: 15px;
+  border-radius: 7px;
+}
+
+.Basket span {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+.total {
+  font-size: 19px;
+  line-height: 19px;
+  color: #2e3333;
+  font-weight: 700;
+}
+
+.Basket--line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.Basket--counter span {
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
+}
+
+.MenuSection {
+  width: 822px;
+}
+
 .MenuSection h1 {
   font-size: 24px;
   line-height: 24px;
@@ -93,7 +160,6 @@ code {
           justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  width: 66%;
 }
 
 .MenuItem {
@@ -111,6 +177,7 @@ code {
   padding: 15px 20px;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  cursor: pointer;
 }
 
 .MenuItem h2 {

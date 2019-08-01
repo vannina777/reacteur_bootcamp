@@ -1,3 +1,6 @@
+$deliveroo: #5acdbd;
+$graphite: #2e3333;
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -26,7 +29,7 @@ code {
 }
 
 .container {
-  width: 87vw;
+  width: 85vw;
   margin: auto;
 }
 
@@ -46,7 +49,7 @@ code {
   h1 {
     font-size: 32px;
     line-height: 32px;
-    color: #2e3333;
+    color: $graphite;
     font-weight: 700;
     margin-bottom: 15px;
   }
@@ -67,7 +70,60 @@ code {
   }
 }
 
+.Display--main {
+  display: flex;
+  align-items: flex-start;
+}
+
+.Basket {
+  width: 350px;
+  align-content: flex-start;
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 15px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  box-shadow: 0 0 15px #c0c2c2;
+  button {
+    width: 100%;
+    height: 30px;
+    background-color: #5acdbd;
+    font-size: 16px;
+    line-height: 16px;
+    color: white;
+    font-weight: 600;
+    margin-bottom: 15px;
+    border-radius: 7px;
+  }
+  span {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.total {
+  font-size: 19px;
+  line-height: 19px;
+  color: $graphite;
+  font-weight: 700;
+}
+
+.Basket--line {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Basket--counter {
+  span {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
 .MenuSection {
+  width: 822px;
   h1 {
     font-size: 24px;
     line-height: 24px;
@@ -80,7 +136,6 @@ code {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  width: 66%;
 }
 
 .MenuItem {
@@ -97,7 +152,7 @@ code {
     font-size: 18px;
     line-height: 18px;
     margin-bottom: 7px;
-    color: #2e3333;
+    color: $graphite;
   }
   p {
     color: #808484;
@@ -109,6 +164,7 @@ code {
     overflow: hidden;
     text-overflow: ellipsis;
   }
+  cursor: pointer;
 }
 .MenuItem--left {
   display: flex;

@@ -3,11 +3,16 @@ import React from "react";
 import { jsx, css } from "@emotion/core";
 
 const MenuItem = props => {
-  const { data } = props;
+  const { data, handleItemClick } = props;
 
   const displayText = data.description; //.slice(0, 80);
   return (
-    <div className="MenuItem">
+    <div
+      className="MenuItem"
+      onClick={() => {
+        handleItemClick(data.title, data.price);
+      }}
+    >
       <div className="MenuItem--left">
         <h2> {data.title}</h2>
         {displayText ? <p> {displayText}</p> : null}
