@@ -12,7 +12,7 @@ class Basket extends React.Component {
       total += Number(basket[curr].count * basket[curr].price);
       return (
         <div key={index} className="Basket--line">
-          <div className="Basket--conter">
+          <div className="Basket--counter">
             <span
               onClick={() => {
                 removeItem(curr);
@@ -48,7 +48,7 @@ class Basket extends React.Component {
         <hr />
         <div className="Basket--line">
           <span> Sous-total</span>
-          <span> {total} €</span>
+          <span> {total.toFixed(2)} €</span>
         </div>
         <div className="Basket--line">
           <span> Frais de livraison</span>

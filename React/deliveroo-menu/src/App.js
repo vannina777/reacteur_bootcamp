@@ -89,7 +89,7 @@ class App extends React.Component {
           <div>
             <RestaurantHeader css={{}} data={this.state.data.restaurant} />
             <div className="Display--main container">
-              <div style={{ border: "solid 1px black", flex: 2 }}>
+              <div style={{ flex: 2 }}>
                 {Object.keys(this.state.data.menu).map((curr, index) => {
                   return (
                     <MenuSection

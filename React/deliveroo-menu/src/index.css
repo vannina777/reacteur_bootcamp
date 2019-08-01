@@ -88,8 +88,11 @@ code {
 
 .Basket {
   width: 350px;
-  -ms-flex-line-pack: start;
-      align-content: flex-start;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
   background-color: white;
   margin-top: 40px;
   margin-bottom: 40px;
@@ -118,7 +121,7 @@ code {
   line-height: 16px;
 }
 
-.total {
+.Basket--line .total {
   font-size: 19px;
   line-height: 19px;
   color: #2e3333;
@@ -134,9 +137,9 @@ code {
           justify-content: space-between;
 }
 
-.Basket--counter span {
+.Basket--counter span:nth-child(2) {
   display: inline-block;
-  min-width: 20px;
+  width: 20px;
   text-align: center;
 }
 
