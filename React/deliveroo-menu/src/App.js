@@ -5,6 +5,7 @@ import { jsx, css } from "@emotion/core";
 import Axios from "axios";
 import MenuSection from "./MenuSection";
 import RestaurantHeader from "./RestaurantHeader";
+import Header from "./Header";
 
 const API_URL = "https://deliveroo-api.now.sh/menu";
 
@@ -43,15 +44,17 @@ class App extends React.Component {
           background-color: #f3f5f5;
         `}
       >
+        <Header />
         {this.state.data === null ? (
           <p> isLoading</p>
         ) : (
-          <div className="container">
+          <div>
             <RestaurantHeader css={{}} data={this.state.data.restaurant} />
 
             {Object.keys(this.state.data.menu).map((curr, index) => {
               return (
                 <MenuSection
+                  key={index}
                   className={css({})}
                   name={curr}
                   data={this.state.data.menu[curr]}
