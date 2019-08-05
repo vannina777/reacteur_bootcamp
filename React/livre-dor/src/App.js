@@ -8,11 +8,28 @@ import LoginPage from "./LoginPage";
 class App extends React.Component {
   state = {
     data: [],
-    token: ""
+    token: "",
+    newMessage: ""
   };
 
   setToken = token => {
     this.setState({ token: token });
+  };
+
+  postMessage = () => {
+    const config = {
+      headers: { Authorization: "Bearer " + this.state.token }
+    };
+
+    const bodyParameters = {
+      content: this.state.newMessage
+    };
+
+    Axios.post(
+      "https://livredor-api.herokuapp.com/message",
+      bodyParameters,
+      config
+    );
   };
 
   getData = async () => {
@@ -27,6 +44,27 @@ class App extends React.Component {
   };
 
   render = () => {
+    //element for message submission
+    const messageSubmission = (
+      <div>
+        <input
+          value={this.setState.newMessage}
+          onChange={event => {
+            this.setState({ newMessage: event.target.value });
+          }}
+        />
+        <button
+          onClick={async () => {
+            this.postMessage();
+            this.setState({ newMessage: "" });
+            this.getData();
+          }}
+        >
+          submit
+        </button>
+      </div>
+    );
+
     // creating list elements render
     const itemListElements = this.state.data.map((curr, index) => {
       return <ListItem key={index} content={curr.content} />;
@@ -39,7 +77,7 @@ class App extends React.Component {
           <Route
             path="/login"
             render={props => {
-              return <LoginPage />;
+              return <LoginPage onSubmit={this.setToken} />;
             }}
           />
           <Route
@@ -56,9 +94,13 @@ class App extends React.Component {
                     Refresh
                   </h2>
                   <ul>{itemListElements}</ul>
-                  <p>
-                    You need to <a href="/login">login</a> to add a message
-                  </p>
+                  {this.state.token ? (
+                    messageSubmission
+                  ) : (
+                    <p>
+                      You need to <a href="/login">login</a> to add a message
+                    </p>
+                  )}
                 </div>
               );
             }}
