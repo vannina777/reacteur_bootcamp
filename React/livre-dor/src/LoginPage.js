@@ -4,8 +4,8 @@ import { Redirect } from "react-router-dom";
 
 class LoginPage extends React.Component {
   state = {
-    username: "user",
-    password: "pass",
+    username: "",
+    password: "",
     loggedIn: false
   };
 
