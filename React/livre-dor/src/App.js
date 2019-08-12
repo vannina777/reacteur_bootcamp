@@ -1,18 +1,23 @@
 import React from "react";
-
-import ListItem from "./ListItem";
 import Axios from "axios";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Cookies from "js-cookies";
+
+import ListItem from "./ListItem";
 import LoginPage from "./LoginPage";
 
 class App extends React.Component {
   state = {
     data: [],
-    token: "",
+    token: Cookies.get("token") || null,
     newMessage: ""
   };
 
   setToken = token => {
+    if (Cookies.get("token") === null) {
+      Cookies.set("token", token);
+    }
+
     this.setState({ token: token });
   };
 
